@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+
+                <ul class="nav-list logo-nav ">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="asset/logo.png" alt="logo">
+                        </a>
+                    </li>
+                </ul>
+
+
+                <ul class="nav-list">
+                    <li class="nav-item active" data-tab="home">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Account settings</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" data-tab="edit">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Edit profile</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" data-tab="update">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>Update password</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav-list bottom-nav">
+                    <li class="nav-item" data-tab="deposit">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-wallet"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-tab="orders">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-receipt"></i>
+                            <span>My orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-tab="messages">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>My messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-tab="referrals">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-friends"></i>
+                            <span>My referrals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-tab="refunds">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-undo-alt"></i>
+                            <span>My refunds</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-tab="favorite">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-heart"></i>
+                            <span>Favorite list</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav-list bottom-nav">
+                    <li class="nav-item" data-tab="billing">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing information</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-tab="verification">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Verification center</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav-list bottom-nav">
+                    <li class="nav-item">
+                        <a href="/signup.html" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+
+            </nav>
+        </div>
+
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <header class="top-nav">
+                <div class="nav-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Search" class="search-input">
+                    </div>
+                </div>
+
+                <div class="nav-right">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+
+                    <div class="language-selector">
+                        <div class="flag">
+                            <img src="asset/flag.png" alt="UK Flag">
+                        </div>
+                        <span>English</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                        </div>
+                        <div class="user-info">
+                            <div class="user-name">Moni Roy</div>
+                            <div class="user-role">Admin</div>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+
+            <div class="content-area">
+
+                <!-- Home Tab Content -->
+                <div class="tab-content active" id="home-content">
+
+
+                    <!-- update-password Component -->
+
+                    <div class="profile-layout padding-5">
+
+                        <!-- Main Content -->
+                        <div class="profile-content">
+
+                            <div class="linked-accounts ">
+                                <div class="update-password-text">
+                                    <h3>Account settings</h3>
+                                    <p>Update your profile settings</p>
+
+                                </div>
+
+                                <div class="social-links">
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">Username</label>
+                                            <input type="text" id="twitter" placeholder="Enter username">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">E-mail address</label>
+                                            <input type="text" id="github" placeholder="Enter e-mail address">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">Fullname</label>
+                                            <input type="text" id="twitter" placeholder="Enter fullname">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">Password </label>
+                                            <input type="text" id="github" placeholder="Enter password ">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="github">Country </label>
+                                            <input type="text" id="github" placeholder="Enter country ">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">New Password</label>
+                                            <input type="text" id="github" placeholder="Enter your new password">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="update-btn-container">
+                                    <button class="update-btn">Update</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- Profile Tab Content -->
+                <div class="tab-content " id="edit-content">
+
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>Edit profile</h1>
+                            <p>Update your profile settings</p>
+                        </div>
+                    </div>
+
+                    <!-- edit-profile Component -->
+
+                    <div class="profile-layout">
+                        <!-- Left Sidebar -->
+                        <div class="profile-sidebar">
+                            <div class="user-info-card">
+                                <div class="profile-header">
+                                    <div class="profile-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Moni Roy">
+                                    </div>
+                                    <h2 class="user-name">Moni Roy</h2>
+                                    <p class="user-username">Sonya Charles</p>
+
+                                    <div class="user-title">
+                                        <span>Brand Identity Designer</span>
+                                        <button class="edit-icon-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="user-status">
+                                        <span class="status-badge online">Online</span>
+                                    </div>
+                                </div>
+
+                                <div class="user-details">
+                                    <div class="detail-row">
+                                        <div class="detail-label">Member since</div>
+                                        <div class="detail-value">March 25, 2025</div>
+                                    </div>
+                                    <div class="detail-row">
+                                        <div class="detail-label">Current level</div>
+                                        <div class="detail-value">New buyer</div>
+                                    </div>
+                                    <div class="detail-row">
+                                        <div class="detail-label">Country</div>
+                                        <div class="detail-value">
+                                            <img src="https://flagcdn.com/w20/us.png" alt="US" class="flag-icon">
+                                            United States
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-section">
+                                <div class="section-header">
+                                    <h3>Description</h3>
+                                    <button class="edit-btn">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Edit
+                                    </button>
+                                </div>
+                                <p class="section-subtext">Tell us more about yourself</p>
+                                <div class="section-content">
+                                    <p>Brand Identity Designer</p>
+                                </div>
+                            </div>
+
+                            <div class="profile-section">
+                                <div class="section-header">
+                                    <h3>Skills</h3>
+                                    <button class="add-btn">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <p class="section-subtext">Let people know your skills</p>
+                                <div class="section-content">
+                                    <p>Visual Designer</p>
+                                </div>
+                            </div>
+
+                            <div class="profile-section">
+                                <div class="section-header">
+                                    <h3>Languages</h3>
+                                    <button class="add-btn">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <p class="section-subtext">Add languages you speak</p>
+                                <div class="section-content">
+                                    <p>English</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="profile-content">
+                            <div class="profile-accounts">
+
+                                <div class="update-profile-card">
+                                    <div class="update-icon">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </div>
+                                    <h3>Update profile</h3>
+                                    <p>These information will apperar on your public profile. Use the links below to
+                                        edit
+                                        other settings</p>
+                                </div>
+
+                                <div class="profile-tabs">
+                                    <button class="tab-btn">
+                                        <i class="fas fa-cog"></i>
+                                        Account settings
+                                    </button>
+                                    <button class="tab-btn">
+                                        <i class="fas fa-lock"></i>
+                                        Change password
+                                    </button>
+                                    <button class="tab-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        Get verified
+                                    </button>
+                                    <button class="tab-btn">
+                                        <i class="fas fa-user"></i>
+                                        View profile
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="linked-accounts">
+                                <h3>Linked accounts</h3>
+                                <p class="section-subtext">Connect your social media accounts</p>
+
+                                <div class="social-links">
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="facebook">Facebook</label>
+                                            <input type="text" id="facebook" placeholder="Enter your Facebook profile">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="youtube">Youtube</label>
+                                            <input type="text" id="youtube" placeholder="Enter your Youtube profile">
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">Twitter</label>
+                                            <input type="text" id="twitter" placeholder="Enter your Twitter profile">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">Github</label>
+                                            <input type="text" id="github" placeholder="Enter your Github profile">
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="dribbble">Dribbble</label>
+                                            <input type="text" id="dribbble" placeholder="Enter your Dribbble profile">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="stackoverflow">Stack Overflow</label>
+                                            <input type="text" id="stackoverflow"
+                                                placeholder="Enter your Stack Overflow profile">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="update-btn-container">
+                                    <button class="update-btn">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- update password Tab Content -->
+                <div class="tab-content " id="update-content">
+
+
+                    <!-- update-password Component -->
+
+                    <div class="profile-layout padding-5">
+
+                        <!-- Main Content -->
+                        <div class="profile-content">
+
+                            <div class="linked-accounts ">
+                                <div class="update-password-text">
+                                    <h3>Change password</h3>
+                                    <p>Make a strong password to keep your account safe</p>
+
+                                </div>
+
+                                <div class="social-links">
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="facebook">Current password</label>
+                                            <input type="text" id="facebook" placeholder="Enter current password">
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">New password</label>
+                                            <input type="text" id="twitter" placeholder="Enter Enter new password">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">Password confirmation</label>
+                                            <input type="text" id="github" placeholder="Enter password confirmation">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="update-btn-container">
+                                    <button class="update-btn">Update</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- Deposit Tab Content -->
+                <div class="tab-content " id="deposit-content">
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>Add funds</h1>
+                            <p>Please choose how you would like to deposit</p>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="orders-section">
+                        <div class="section-header">
+                            <h2>Transactions history</h2>
+                            <div class="dropdown">
+                                <button class="dropdown-toggles">
+                                    October
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="orders-table">
+                            <div class="table-header">
+                                <div class="header-cell option-cell">Buyer</div>
+                                <div class="header-cell option-cell">Amount</div>
+                                <div class="header-cell date-cell">Date</div>
+                                <div class="header-cell status-cell">Status</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell option-cell">
+                                    Admin
+                                </div>
+
+                                <div class="cell option-cell">
+
+                                    $100.00
+
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell status-cell">
+                                    <span class="status-badge delivered">Delivered</span>
+                                </div>
+
+                            </div>
+
+                            <div class="table-row">
+
+                                <div class="cell option-cell">
+                                    Admin
+                                </div>
+
+                                <div class="cell option-cell">
+
+                                    $100.00
+
+                                </div>
+
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell status-cell">
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell option-cell">
+                                    Admin
+                                </div>
+
+                                <div class="cell option-cell">
+
+                                    $100.00
+
+                                </div>
+
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+
+                                <div class="cell status-cell">
+                                    <span class="status-badge rejected">Rejected</span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Order Tab Content -->
+                <div class="tab-content " id="orders-content">
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>My Orders</h1>
+                            <p>Check the status of recent orders, manage their items</p>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="orders-section">
+                        <div class="section-header">
+                            <h2>Orders history</h2>
+                            <div class="dropdown">
+                                <button class="dropdown-toggles">
+                                    October
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="orders-table">
+                            <div class="table-header">
+                                <div class="header-cell gig-cell">Gig</div>
+                                <div class="header-cell profit-cell">Profit</div>
+                                <div class="header-cell option-cell">Options</div>
+                                <div class="header-cell date-cell">Delivery Date</div>
+                                <div class="header-cell status-cell">Status</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e8f0fe;">
+                                            <img src="asset/Image.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell profit-cell">$90.00</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-paperclip"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                    </span>
+
+                                </div>
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+                                <div class="cell status-cell">
+                                    <span class="status-badge delivered">Delivered</span>
+                                </div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #f8e4ff;">
+                                            <img src="asset/Image2.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell profit-cell">$90.00</div>
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-paperclip"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                    </span>
+
+                                </div>
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+                                <div class="cell status-cell">
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e0f7fa;">
+                                            <img src="asset/Image3.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell profit-cell">$90.00</div>
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-paperclip"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                    </span>
+
+                                </div>
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+                                <div class="cell status-cell">
+                                    <span class="status-badge rejected">Rejected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- messages Tab Content -->
+                <div class="tab-content " id="messages-content">
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>My Messages</h1>
+                            <p>Menage all your messages</p>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="chat-container">
+
+                        <!-- Left Sidebar -->
+                        <div class="chat-sidebar">
+                            <div class="sidebar-header">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle">
+                                        All Messages
+                                        <!-- <i class="fas fa-chevron-down"></i> -->
+                                    </button>
+                                </div>
+                                <button class="menu-btn">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+
+                            <div class="search-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search or start a new chat">
+                            </div>
+
+                            <div class="conversation-list">
+                                <div class="conversation-item active">
+                                    <div class="conversation-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg"
+                                            alt="Jennifer Markus">
+                                    </div>
+                                    <div class="conversation-content">
+                                        <div class="conversation-header">
+                                            <h3>Jennifer Markus</h3>
+                                            <button class="star-btn">
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                        </div>
+                                        <p class="message-preview">Hey! Did you finish the Hi-Fi wireframes for flora
+                                            app design?</p>
+                                        <div class="message-time">
+                                            <i class="far fa-clock"></i>
+                                            Today | 05:30 PM
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="conversation-item">
+                                    <div class="conversation-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Iva Ryan">
+                                    </div>
+                                    <div class="conversation-content">
+                                        <div class="conversation-header">
+                                            <h3>Iva Ryan</h3>
+                                            <button class="star-btn">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                        </div>
+                                        <p class="message-preview">Hey! Did you finish the Hi-Fi wireframes for flora
+                                            app design?</p>
+                                        <div class="message-time">
+                                            <i class="far fa-clock"></i>
+                                            Today | 05:30 PM
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="conversation-item">
+                                    <div class="conversation-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jerry Helfer">
+                                    </div>
+                                    <div class="conversation-content">
+                                        <div class="conversation-header">
+                                            <h3>Jerry Helfer</h3>
+                                            <button class="star-btn">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                        </div>
+                                        <p class="message-preview">Hey! Did you finish the Hi-Fi wireframes for flora
+                                            app design?</p>
+                                        <div class="message-time">
+                                            <i class="far fa-clock"></i>
+                                            Today | 05:30 PM
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="conversation-item">
+                                    <div class="conversation-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David Elson">
+                                    </div>
+                                    <div class="conversation-content">
+                                        <div class="conversation-header">
+                                            <h3>David Elson</h3>
+                                            <button class="star-btn">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                        </div>
+                                        <p class="message-preview">Hey! Did you finish the Hi-Fi wireframes for flora
+                                            app design?</p>
+                                        <div class="message-time">
+                                            <i class="far fa-clock"></i>
+                                            Today | 05:30 PM
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="conversation-item">
+                                    <div class="conversation-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Mary Freund">
+                                    </div>
+                                    <div class="conversation-content">
+                                        <div class="conversation-header">
+                                            <h3>Mary Freund</h3>
+                                            <button class="star-btn">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                        </div>
+                                        <p class="message-preview">Hey! Did you finish the Hi-Fi wireframes for flora
+                                            app design?</p>
+                                        <div class="message-time">
+                                            <i class="far fa-clock"></i>
+                                            Today | 05:30 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Chat Area -->
+                        <div class="chat-main">
+                            <div class="chat-header">
+                                <div class="user-info">
+                                    <div class="user-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ammi Watts">
+                                    </div>
+                                    <h2>Ammi Watts</h2>
+                                </div>
+                                <div class="chat-actions">
+                                    <button class="action-btn">
+                                        <i class="far fa-star"></i>
+                                    </button>
+                                    <button class="action-btn">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="action-btn">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="chat-messages">
+                                <div class="message-date">
+                                    <span>Today</span>
+                                    <span>06:32 PM</span>
+                                </div>
+
+                                <div class="message received">
+                                    <div class="message-content">
+                                        <p>Oh, hello! All perfectly.</p>
+                                        <p>I will check it and get back to you soon</p>
+                                    </div>
+                                    <div class="message-time">04:45 PM</div>
+                                </div>
+
+                                <div class="message sent">
+                                    <div class="message-content">
+                                        <p>Oh, hello! All perfectly.</p>
+                                        <p>I will check it and get back to you soon</p>
+                                    </div>
+                                    <div class="message-time2">04:45 PM</div>
+                                </div>
+
+                                <div class="message received">
+                                    <div class="message-content">
+                                        <p>Oh, hello! All perfectly.</p>
+                                        <p>I will check it and get back to you soon</p>
+                                    </div>
+                                    <div class="message-time">04:45 PM</div>
+                                </div>
+
+                                <div class="message sent">
+                                    <div class="message-content">
+                                        <p>Oh, hello! All perfectly.</p>
+                                        <p>I will check it and get back to you soon</p>
+                                    </div>
+                                    <div class="message-time2">04:45 PM</div>
+                                </div>
+
+                                <div class="message received voice-message">
+                                    <div class="message-content">
+                                        <div class="voice-player">
+                                            <button class="play-btn">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <div class="waveform">
+                                                <div class="wave-bars">
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                    <div class="bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="duration">01:24</div>
+                                        </div>
+                                    </div>
+                                    <div class="message-time">04:45 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="chat-input">
+                                <button class="input-action emoji-btn">
+                                    <i class="far fa-smile"></i>
+                                </button>
+                                <div class="input-field">
+                                    <input type="text" placeholder="Type your message here...">
+                                </div>
+                                <button class="input-action attach-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                </button>
+                                <button class="input-action voice-btn">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button class="input-action like-btn">
+                                    <i class="far fa-thumbs-up"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Reviews Tab Content -->
+                <div class="tab-content " id="reviews-content">
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>Reviews</h1>
+                            <div class="bread-crumb">
+                                <div class="bread-crumb-item">
+                                    <span>Home</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                                <div class="bread-crumb-item">
+                                    <span>My dashboard</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                                <div class="bread-crumb-item">
+                                    <span>Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-outline">Switch to buying</button>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="orders-section">
+                        <div class="section-header">
+                            <h2>Latest Reviews</h2>
+                            <div class="dropdown">
+                                <button class="dropdown-toggles">
+                                    October
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="orders-table">
+                            <div class="table-header">
+                                <div class="header-cell gig-cell">Gig</div>
+                                <div class="header-cell profit-cell">Buyer</div>
+                                <div class="header-cell date-cell">Rating</div>
+                                <div class="header-cell date-cell">Date</div>
+                                <div class="header-cell option-cell">Options</div>
+
+                            </div>
+
+                            <div class="table-row">
+
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e0f7fa;">
+                                            <img src="asset/Image3.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell profit-cell">Admin</div>
+
+                                <div class="cell rating-cell">
+
+                                    <div class="stars">
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star black">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                    </div>
+
+                                    <p>8 reviews</p>
+
+
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #f8e4ff;">
+                                            <img src="asset/Image2.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell profit-cell">Admin</div>
+
+                                <div class="cell rating-cell">
+
+                                    <div class="stars">
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                    </div>
+
+                                    <p>9 reviews</p>
+
+
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e0f7fa;">
+                                            <img src="asset/Image3.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell profit-cell">Admin</div>
+
+                                <div class="cell rating-cell">
+
+                                    <div class="stars">
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                        <span class="star yellow">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+
+                                    </div>
+
+                                    <p>0 reviews</p>
+
+
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- My Referrals Tab Content -->
+                <div class="tab-content " id="referrals-content">
+
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>My Referrals</h1>
+                            <p>Track your referrals and earn bonuses</p>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="orders-section">
+                        <div class="section-header">
+                            <h2>Referrals history</h2>
+                        </div>
+
+                        <div class="orders-table">
+
+                            <div class="referral-header">
+
+                                <div class="header-referral">
+                                    <h1> Your Referral Link </h1>
+                                    <p>Share this link with your friends to earn bonuses when they join</p>
+                                </div>
+
+                                <div class="copy-referreal">
+                                    <input type="text" id="twitter" placeholder="https:/app.dreamhire.com">
+                                    <button class="btn btn-primary">Copy</button>
+                                </div>
+
+                            </div>
+
+                            <div class="referral-invite">
+
+                                <h1> Referral Bonus </h1>
+                                <p>
+                                    Invite your friends using the link above and earn bonuses for each successful
+                                    referral
+                                </p>
+
+                                <div class="action-button">
+                                    <button class="btn btn-primary">Invite Friends</button>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Refunds Tab Content -->
+                <div class="tab-content " id="refunds-content">
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>Refunds</h1>
+                            <p>Your latest refunds requests</p>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="orders-section">
+                        <div class="section-header">
+                            <h2>Latest Refunds</h2>
+                            <div class="dropdown">
+                                <button class="dropdown-toggles">
+                                    October
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="orders-table">
+                            <div class="table-header">
+                                <div class="header-cell gig-cell">Gig</div>
+                                <div class="header-cell profit-cell">Buyer</div>
+                                <div class="header-cell option-cell">Options</div>
+                                <div class="header-cell date-cell">Delivery Date</div>
+                                <div class="header-cell status-cell">Status</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e8f0fe;">
+                                            <img src="asset/Image.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell profit-cell">Admin</div>
+
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+                                <div class="cell status-cell">
+                                    <span class="status-badge delivered">Delivered</span>
+                                </div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #f8e4ff;">
+                                            <img src="asset/Image2.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell profit-cell">Admin</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+                                <div class="cell status-cell">
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e0f7fa;">
+                                            <img src="asset/Image3.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell profit-cell">Admin</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+                                <div class="cell status-cell">
+                                    <span class="status-badge rejected">Rejected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- favorite Tab Content -->
+                <div class="tab-content " id="favorite-content">
+                    <!-- Header Component -->
+                    <div class="header-section">
+                        <div class="welcome-info">
+                            <h1>Favorite List</h1>
+                            <p>Recently added to your favorite list</p>
+                        </div>
+                    </div>
+
+                    <!-- Order Component -->
+                    <div class="orders-section">
+                        <div class="section-header">
+                            <h2>Latest Favorite List</h2>
+                            <div class="dropdown">
+                                <button class="dropdown-toggles">
+                                    October
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="orders-table">
+                            <div class="table-header">
+                                <div class="header-cell gig-cell">Gig</div>
+                                <div class="header-cell date-cell">Date</div>
+                                <div class="header-cell option-cell">Options</div>
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e8f0fe;">
+                                            <img src="asset/Image.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #f8e4ff;">
+                                            <img src="asset/Image2.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="table-row">
+                                <div class="cell gig-cell">
+                                    <div class="gig-info">
+                                        <div class="gig-avatar" style="background-color: #e0f7fa;">
+                                            <img src="asset/Image3.png" alt="Gig Icon">
+                                        </div>
+                                        <div class="gig-details">
+                                            <div class="gig-title">Do newly launched company promotions</div>
+                                            <div class="gig-category">Web Development</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cell date-cell">12.09.2019 - 12.53 PM</div>
+
+                                <div class="cell option-cell">
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </span>
+
+                                    <span class="option-badge">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- billing Tab Content -->
+                <div class="tab-content " id="billing-content">
+
+
+                    <!-- billing Component -->
+
+                    <div class="profile-layout padding-5">
+
+                        <!-- Main Content -->
+                        <div class="profile-content">
+
+                            <div class="linked-accounts ">
+                                <div class="update-password-text">
+                                    <h3>Billing information</h3>
+                                    <p>Update your billing information below</p>
+
+                                </div>
+
+                                <div class="social-links">
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">First name</label>
+                                            <input type="text" id="twitter" placeholder="Enter first name">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">Last name</label>
+                                            <input type="text" id="github" placeholder="Enter last name">
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">Company</label>
+                                            <input type="text" id="twitter" placeholder="Enter company name (optional)">
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="github">City </label>
+                                            <input type="text" id="github" placeholder="Enter City ">
+                                        </div>
+                                        <div class="social-column">
+                                            <label for="github">Postal code</label>
+                                            <input type="text" id="github" placeholder="Enter postal code">
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="country">Country</label>
+                                            <select id="country">
+                                                <option value="">Choose country</option>
+                                                <option value="us">United States</option>
+                                                <option value="uk">United Kingdom</option>
+                                                <option value="ca">Canada</option>
+                                                <option value="au">Australia</option>
+                                                <option value="in">India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="address">Address</label>
+                                            <textarea id="address" placeholder="Enter your address"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="social-row">
+                                        <div class="social-column">
+                                            <label for="twitter">VAT number</label>
+                                            <input type="text" id="twitter" placeholder="Choose country">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="update-btn-container">
+                                    <button class="update-btn">Update</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- verification Tab Content -->
+                <div class="tab-content " id="verification-content">
+
+
+                    <!-- billing Component -->
+
+                    <div class="profile-layout padding-5">
+
+                        <!-- Main Content -->
+                        <div class="profile-content">
+
+                            <div class="linked-accounts">
+                                <div class="update-password-text">
+                                    <h3>Verification center</h3>
+                                    <p>Help us make our marketplace a safe place by verifying your account</p>
+
+                                </div>
+
+
+
+                                <div class="document-selection">
+                                    <h2 class="selection-title">Choose document type</h2>
+
+                                    <div class="document-options">
+                                        <label class="document-option">
+                                            <input type="radio" name="document-type" value="government-id">
+                                            <span class="radio-custom"></span>
+                                            <span class="option-text">Government-issued ID</span>
+                                        </label>
+
+                                        <label class="document-option">
+                                            <input type="radio" name="document-type" value="driver-license">
+                                            <span class="radio-custom"></span>
+                                            <span class="option-text">Driver license</span>
+                                        </label>
+
+                                        <label class="document-option">
+                                            <input type="radio" name="document-type" value="passport">
+                                            <span class="radio-custom"></span>
+                                            <span class="option-text">Passport</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="update-btn-container">
+                                    <button class="update-btn">Next Step</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
