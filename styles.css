@@ -290,7 +290,7 @@ body {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .search-container {
-        width: 200px;
+        width: 100%
     }
 
     .language-selector span {
@@ -303,9 +303,6 @@ body {
 }
 
 @media (max-width: 576px) {
-    .search-container {
-        width: 150px;
-    }
 
     .language-selector {
         display: none;
@@ -454,9 +451,16 @@ body {
 }
 
 /* Table Styles */
-.orders-table {
+.table-scroll {
     width: 100%;
+    overflow-x: auto;
 }
+
+.orders-table {
+    min-width: 600px;
+}
+
+
 
 .table-header {
     display: flex;
@@ -476,6 +480,7 @@ body {
     display: flex;
     padding: 15px;
     border-bottom: 1px solid #f0f0f0;
+    gap: 20px;
 }
 
 .table-row:last-child {
@@ -577,9 +582,14 @@ body {
 /* Responsive Styles */
 @media (max-width: 768px) {
 
+    .orders-table {
+        min-width: 800px;
+    }
+    
+
     .table-header,
     .table-row {
-        flex-direction: column;
+        /* flex-direction: column; */
         padding: 15px 10px;
     }
 
@@ -608,6 +618,14 @@ body {
     .status-cell {
         flex: 1;
     }
+
+
+    .gig-avatar{
+        display: none;
+    }
+
+
+
 }
 
 
@@ -837,9 +855,6 @@ body {
 
 
 
-
-
-
 /* auth pages styles */
 .main-form-container {
     width: 100vw;
@@ -854,6 +869,7 @@ body {
 .container {
     max-width: 500px;
     width: 100%;
+    padding: 20px;
 }
 
 .form-container {
@@ -1421,6 +1437,7 @@ label {
 
     .profile-tabs {
         flex-wrap: wrap;
+        margin: 0;
     }
 
     .tab-btn {
@@ -1590,6 +1607,11 @@ label {
     border-bottom: 1px solid #f0f0f0;
 }
 
+.dropdown {
+    position: relative;
+}
+
+
 .dropdown-toggle {
     background: none;
     border: none;
@@ -1605,6 +1627,14 @@ label {
     margin-left: 5px;
     font-size: 12px;
 }
+
+
+
+.dropdown-menu{
+    font-size: 14px;
+    min-width: 6rem !important;
+}
+
 
 .menu-btn {
     background: none;
@@ -1984,7 +2014,7 @@ label {
 @media (max-width: 768px) {
     .chat-container {
         flex-direction: column;
-        height: 95vh;
+        height: 120vh;
     }
 
     .chat-sidebar {
@@ -2005,12 +2035,19 @@ label {
     }
 
     .chat-container {
-        height: 100vh;
+        height: 120vh;
         border-radius: 0;
     }
 
     .message {
         max-width: 90%;
+    }
+    .message-preview{
+        display: none;
+    }
+    .referral-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
@@ -2215,6 +2252,12 @@ label {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 999;
     }
+
+    .user-name{
+        display: none;
+    }
+
+
 }
 
 
